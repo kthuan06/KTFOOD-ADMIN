@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <string name="app_name">AdminKTFOOD</string>
+    <string name="google_app_id" translatable="false">1:1035469437089:android:73a4fb8297b2cd4f</string>
+
+
+    <string name="gcm_defaultSenderId" translatable="false">1035469437089</string>
+    <string name="default_web_client_id" translatable="false">337894902146-e4uksm38sne0bqrj6uvkbo4oiu4hvigl.apps.googleusercontent.com</string>
+    <string name="ga_trackingId" translatable="false">UA-65557217-3</string>
+    <string name="firebase_database_url" translatable="false">https://example-url.firebaseio.com</string>
+    <string name="google_api_key" translatable="false">AIzbSyCILMsOuUKwN3qhtxrPq7FFemDJUAXTyZ8</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzbSyCILMsOuUKwN3qhtxrPq7FFemDJUAXTyZ8</string>
+    <string name="project_id" translatable="false">mydemoapp</string>
+
+</resources>
