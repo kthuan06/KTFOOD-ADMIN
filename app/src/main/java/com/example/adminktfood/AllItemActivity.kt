@@ -3,6 +3,7 @@ package com.example.adminktfood
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.adminktfood.adapter.MenuItemAdapter
 import com.example.adminktfood.databinding.ActivityAllItemBinding
@@ -59,8 +60,25 @@ class AllItemActivity : AppCompatActivity() {
         })
     }
     private fun setAdapter() {
-        val adapter = MenuItemAdapter(this@AllItemActivity, menuItems, databaseReference)
+        val adapter = MenuItemAdapter(this@AllItemActivity, menuItems, databaseReference){position ->
+            deleteMenuItems(position)
+        }
         binding.AllItemRecycel.layoutManager= LinearLayoutManager(this)
         binding.AllItemRecycel.adapter = adapter
+    }
+
+    private fun deleteMenuItems(position: Int) {
+        val menuItemDel = menuItems[position]
+        val menuItemKey = menuItemDel.key
+        val fMnRef = database.reference.child("menu").child(menuItemKey!!)
+        fMnRef.removeValue().addOnCompleteListener { task ->
+            if(task.isSuccessful){
+                menuItems.removeAt(position)
+                binding.AllItemRecycel.adapter?.notifyItemRemoved(position)
+
+            }else{
+                Toast.makeText(this, "Item not delete", Toast.LENGTH_SHORT).show()
+            }
+        }
     }
 }

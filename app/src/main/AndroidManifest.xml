@@ -13,6 +13,9 @@
         android:theme="@style/Theme.AdminKTFOOD"
         tools:targetApi="31">
         <activity
+            android:name=".ProfileActivity"
+            android:exported="false" />
+        <activity
             android:name=".OrderDetailsActivity"
             android:exported="false" />
         <activity
